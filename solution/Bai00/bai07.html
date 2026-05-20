@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ===== KHAI BÁO MẢNG =====
+        let monHoc = ["Toán", "Lý", "Hóa", "Sinh"];
+        let diemSo = [8, 7, 9, 6.5, 8.5];
+        let honHop = ["Minh", 20, true, null]; // Mảng hỗn hợp
+
+        // ===== TRUY CẬP PHẦN TỬ =====
+        console.log(monHoc[0]);    // "Toán" (chỉ số bắt đầu từ 0)
+        console.log(monHoc[1]);    // "Lý"
+        console.log(monHoc.length); // 4 (độ dài mảng)
+        console.log(monHoc[monHoc.length - 1]); // "Sinh" (phần tử cuối)
+
+        // ===== THÊM / XÓA =====
+        monHoc.push("Anh");        // Thêm vào cuối → ["Toán","Lý","Hóa","Sinh","Anh"]
+        monHoc.pop();               // Xóa cuối → ["Toán","Lý","Hóa","Sinh"]
+        monHoc.unshift("GDCD");    // Thêm vào đầu → ["GDCD","Toán","Lý","Hóa","Sinh"]
+        monHoc.shift();             // Xóa đầu → ["Toán","Lý","Hóa","Sinh"]
+
+        // ===== DUYỆT MẢNG =====
+        // Cách 1: for loop
+        for (let i = 0; i < diemSo.length; i++) {
+            console.log(`Môn ${i + 1}: ${diemSo[i]} điểm`);
+        }
+
+        // Cách 2: forEach (hay dùng hơn)
+        diemSo.forEach((diem, index) => {
+            console.log(`Môn ${index + 1}: ${diem} điểm`);
+        });
+
+        // ===== TÌM KIẾM =====
+        console.log(monHoc.includes("Lý"));   // true
+        console.log(monHoc.indexOf("Hóa"));   // 2 (vị trí)
+        console.log(monHoc.indexOf("Anh"));   // -1 (không tìm thấy)
+
+        // ===== SẮP XẾP =====
+        let so = [3, 1, 4, 1, 5, 9, 2, 6];
+        so.sort((a, b) => a - b);  // Tăng dần → [1,1,2,3,4,5,6,9]
+        console.log(so);
+
+        //Bài tập con.
+        let monAn = ["Lòng xào dưa", "Gà xào sả ớt", "Phở bò", "Sường xào chua ngọt", "Bánh đa lem"];
+        // 1. In ra món đầu tiên và cuối cùng
+        console.log(monAn[0]);
+        console.log(monAn[monAn.length - 1]);
+        // 2. Thêm 1 món vào đầu
+        monAn.unshift("Cháo lòng");
+        // 3. Xóa món cuối cùng
+        monAn.pop();
+        // 4. Duyệt mảng và in "Món i: ten mon"
+        for(let i = 0; i < monAn.length; i++)
+        {
+            console.log(`Món ${i}: ${monAn[i]}`);
+        }
+        // 5. Kiểm tra "Phở" có trong mảng không?
+        console.log(monAn.includes("Phở"));
+    </script>
+</body>
+
+</html>

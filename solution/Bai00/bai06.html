@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ==  (so sánh giá trị, ÉP KIỂU)
+        // === (so sánh giá trị + kiểu, KHÔNG ép kiểu)
+
+        console.log(5 == "5");      // true  (ép "5" thành 5)
+        console.log(5 === "5");     // false (number ≠ string)
+        console.log(true == 1);     // true  (ép true thành 1)
+        console.log(true === 1);    // false
+
+        // ❌ Luôn dùng === trong code thực tế!
+        // == có thể gây bug khó tìm
+
+        // Các toán tử so sánh
+        console.log(10 > 5);        // true
+        console.log(10 < 5);        // false
+        console.log(10 >= 10);      // true
+        console.log(10 <= 9);       // false
+        console.log(10 != 5);       // true
+        console.log(10 !== "10");   // true
+
+        // Toán tử logic
+        console.log(true && true);   // true  (AND — cả hai đều đúng)
+        console.log(true && false);  // false
+        console.log(true || false);  // true  (OR — một trong hai đúng)
+        console.log(false || false); // false
+        console.log(!true);          // false (NOT — đảo ngược)
+
+        //Bài tập con.
+        let diem = 7.5;
+        let diemChuyenCan = 9;
+
+        // 1. Điểm >= 5 VÀ điểm chuyên cần >= 8 → "Đạt"
+        if (diem >= 5 && diemChuyenCan >= 8) console.log("Đạt");
+        
+        // 2. Ngược lại → "Không đạt"
+        else console.log("Không Đạt");
+        // 3. Điểm >= 8.5 → "Giỏi"
+        if (diem >= 8.5) console.log("Giỏi");
+        // 4. Điểm >= 7 → "Khá"
+        else if (diem >= 7.5) console.log("Khá");
+        // 5. Điểm >= 5 → "Trung bình"
+        else if (diem >= 5) console.log("Trung Bình");
+        // 6. Ngược lại → "Yếu"
+        else console.log("Yếu");
+
+    </script>
+</body>
+
+</html>
