@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ===== KHAI BÁO OBJECT =====
+        let sinhVien = {
+            hoTen: "Nguyễn Văn Minh",
+            tuoi: 20,
+            mssv: "20240001",
+            diem: [8, 7.5, 9],
+            laSinhVien: true
+        };
+
+        // ===== TRUY CẬP THUỘC TÍNH =====
+        console.log(sinhVien.hoTen);        // "Nguyễn Văn Minh" (dấu chấm)
+        console.log(sinhVien["tuoi"]);      // 20 (dấu ngoặc vuông)
+        console.log(sinhVien.diem[0]);      // 8 (truy cập mảng lồng)
+
+        // ===== THÊM / SỬA THUỘC TÍNH =====
+        sinhVien.email = "minh@example.com"; // Thêm mới
+        sinhVien.tuoi = 21;                  // Sửa
+        delete sinhVien.laSinhVien;          // Xóa
+
+        // ===== DUYỆT OBJECT =====
+        for (let key in sinhVien) {
+            console.log(`${key}: ${sinhVien[key]}`);
+        }
+
+        // ===== OBJECT METHODS =====
+        console.log(Object.keys(sinhVien));   // ["hoTen", "tuoi", "mssv", "diem", "email"]
+        console.log(Object.values(sinhVien)); // ["Nguyễn Văn Minh", 21, "20240001", ...]
+
+        // TODO: Tạo object "hoSo" chứa:
+        // - hoTen (string)
+        // - tuoi (number)
+        // - nganh (string)
+        // - soThich (array: 3 sở thích)
+        // - diaChi (object lồng: { tinh, quan, duong })
+        let hoSo = {
+            hoTen: "Mai Trung Kiên",
+            tuoi: 21,
+            nganh: "CNTT",
+            soThich: ["Ngủ", "Ngủ nhưng lâu hơn", "Ngủ cả ngày"],
+            diaChi: {tinh: "Lào Cai", xa: "Khánh Yên", thon:"Độc Lập"}
+        } 
+        // 1. In ra: "Tôi là [hoTen], [tuoi] tuổi, học ngành [nganh]"
+        console.log(`Tôi là ${hoSo.hoTen}, ${hoSo.tuoi} tuổi, học ngành ${hoSo.nganh}`);
+        // 2. In ra sở thích đầu tiên
+        console.log(hoSo.soThich[0]);
+        // 3. In ra địa chỉ đầy đủ
+        console.log(`Thôn ${hoSo.diaChi.thon}, Xã ${hoSo.diaChi.xa}, Tỉnh ${hoSo.diaChi.tinh}`)
+        // 4. Thêm thuộc tính "email"
+        sinhVien.email = "kien@example.com";
+    </script>
+</body>
+
+</html>
